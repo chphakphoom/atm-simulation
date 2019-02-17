@@ -40,7 +40,7 @@
         <div class="card-body">
             <form action="#" th:action="@{/initial-note-result}" th:object="${atm}" method="post" >
                 <div class="form-group" th:each="i: ${#numbers.sequence(0, atm.currency.size()-1)}">
-                    <label>Note <span th:text="${atm.currency[__${i}__]}"/> :</label>
+                    <label>Note ฿<span th:text="${atm.currency[__${i}__]}"/> :</label>
                     <input type="number" min="0" class="form-control"  th:field="${atm.noteOfCurrency[__${i}__]}">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>

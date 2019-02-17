@@ -34,7 +34,6 @@
 <div class="container" >
 
 
-<p>Withdrawn result</p>
 
     <table class="table"  th:object="${atm}" >
         <thead>
@@ -42,13 +41,13 @@
             <th scope="col">#</th>
             <th scope="col">Notes</th>
             <th scope="col">The number of notes are withdrawn</th>
-            <th scope="col">The number of notes in ATM</th>
+            <th scope="col">The number of notes in ATM (Remain amount in ATM: <span th:text="${atm.totalAmount}" /> Bath)</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="i: ${#numbers.sequence(0, atm.currency.size()-1)}">
             <th scope="row"><span th:text="${i+1}" /></th>
-            <td><span th:text="${atm.currency[__${i}__]}" /></td>
+            <td>฿<span th:text="${atm.currency[__${i}__]}" /></td>
             <td><span th:text="${atm.noteOfWithdraw[__${i}__]}" /></td>
             <td><span th:text="${atm.noteOfCurrency[__${i}__]}" /></td>
         </tr>
